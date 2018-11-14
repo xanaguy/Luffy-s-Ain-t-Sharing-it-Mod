@@ -1,0 +1,7 @@
+{
+    "name" : "Ain't sharing it",
+    "description" : "The mod allows you to not share certain mods to the other client",
+    "author" : "Luffy and matt helped xd",
+    "updates" : [{"identifier" : "AintSharingIt"}],
+    "hooks" : [{"hook_id" : "lib/managers/menumanager", "script_path" : "Base.lua"}]
+}
