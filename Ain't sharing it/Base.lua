@@ -41,20 +41,6 @@ Hooks:Add("LocalizationManagerPostInit", "AintSharingItLoc", function(loc)
 	})
 end)
 
---Return false if all mods are whitelisted or disabled
-function MenuCallbackHandler:is_modded_client()
-	local BLT = rawget(_G, "BLT")
-	if BLT and BLT.Mods and BLT.Mods then
-		for _, mod in pairs(BLT.Mods:Mods()) do
-			local data = mod:GetJsonData()
-			local Id = data.name or mod:GetId()			
-			if not AintSharingIt.WhiteList[Id] and mod:IsEnabled() then
-				return true
-			end
-		end
-	end
-	return false
-end
 
 function MenuCallbackHandler:is_not_modded_client()
 	return not self:is_modded_client()
